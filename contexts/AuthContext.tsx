@@ -23,9 +23,9 @@ const initialProducts: Product[] = [
     },
     {
       id: 4,
-      name: 'Bộ tách trà Men Hỏa Biến',
-      description: 'Sự kỳ diệu của nhiệt độ tạo nên sắc màu không bao giờ lặp lại, mang lại trải nghiệm thưởng trà đẳng cấp.',
-      imageUrl: 'https://images.unsplash.com/photo-1576020488410-21149ba0140a?q=80&w=1200&auto=format&fit=crop',
+      name: 'Bình Gốm Dáng Hồ Lô Men Hỏa Biến',
+      description: 'Sự kết hợp hoàn mỹ giữa dáng hồ lô truyền thống mang ý nghĩa phong thủy tốt lành và lớp men hỏa biến sắc xanh hổ phách kỳ ảo.',
+      imageUrl: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1200&auto=format&fit=crop',
     },
      {
       id: 5,
@@ -44,13 +44,7 @@ const initialProducts: Product[] = [
       name: 'Đèn gốm trang trí Mỹ thuật',
       description: 'Hệ thống lỗ thoát sáng được đục tay hoàn toàn, tạo hiệu ứng ánh sáng ấm cúng cho phòng ngủ.',
       imageUrl: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      id: 8,
-      name: 'Lu nước Cỡ đại Men Rạn',
-      description: 'Tác phẩm ngoại thất hoành tráng với men rạn cổ điển, khẳng định gu thẩm mỹ di sản của gia chủ.',
-      imageUrl: 'https://images.unsplash.com/photo-1590424744257-fdb035767566?q=80&w=1200&auto=format&fit=crop',
-    },
+    }
 ];
 
 
@@ -69,8 +63,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [products, setProducts] = useState<Product[]>(initialProducts);
 
   const login = (username: string, password: string): boolean => {
-    // In a real app, you'd use a proper auth system.
-    // Here, we'll use simple hardcoded credentials.
     if (username === 'admin' && password === 'admin123') {
       setIsLoggedIn(true);
       return true;

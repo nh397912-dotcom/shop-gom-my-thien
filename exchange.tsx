@@ -15,14 +15,13 @@ interface CartItem extends Product {
 }
 
 const EXCHANGE_PRODUCTS: Product[] = [
-  { id: 101, name: 'Bình Gốm Men Hỏa Biến', price: 450000, imageUrl: 'https://images.unsplash.com/photo-1578749553348-4736934f029a?auto=format&fit=crop&q=80&w=600', category: 'Trang trí' },
+  { id: 101, name: 'Bình Hồ Lô Men Hỏa Biến', price: 1150000, imageUrl: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=1200&auto=format&fit=crop', category: 'Trang trí' },
   { id: 102, name: 'Chum Rượu Mỹ Thiện Cổ', price: 1200000, imageUrl: 'https://dulichquangngai.vn/uploads/news/2023_12/lang-gom-my-thien.jpg', category: 'Gia dụng' },
   { id: 103, name: 'Ấm Trà Đất Nung Mỹ Thiện', price: 650000, imageUrl: 'https://media.baovanhoa.vn/zoom/600_400/Portals/0/EasyGalleryImages/1/56864/g%E1%BB%91m-1.jpg', category: 'Gia dụng' },
   { id: 104, name: 'Bình Vôi Đắp Nổi Rồng', price: 350000, imageUrl: 'https://resource.kinhtedothi.vn/2021/12/25/trinh.jpg', category: 'Tâm linh' },
   { id: 105, name: 'Lọ Hoa Men Ngọc Mỹ Thiện', price: 580000, imageUrl: 'https://resource.kinhtedothi.vn/2024/01/29/fbe69c260171ab2ff26051.jpg', category: 'Trang trí' },
   { id: 106, name: 'Bát Ăn Cơm Gốm Cổ', price: 85000, imageUrl: 'https://covatdanang.com/wp-content/uploads/2024/11/bst-gom-chau-o.jpg', category: 'Gia dụng' },
   { id: 107, name: 'Đĩa Trang Trí Hoa Văn Xưa', price: 220000, imageUrl: 'https://vnanet.vn/Data/Articles/2025/07/10/8141479/vna_potal_nghe_gom_my_thien_-_di_san_van_hoa_phi_vat_the_quoc_gia_stand.jpg', category: 'Trang trí' },
-  { id: 108, name: 'Lu Đựng Nước Men Rạn', price: 1800000, imageUrl: 'https://images.unsplash.com/photo-1590424744257-fdb035767566?q=80&w=600', category: 'Gia dụng' },
 ];
 
 const ExchangeApp: React.FC = () => {
