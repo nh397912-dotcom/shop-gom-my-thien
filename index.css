@@ -33,6 +33,55 @@
   animation: marquee2 30s linear infinite;
 }
 
+/* Hiệu ứng Lửa bùng cháy mạnh mẽ cho nút Mua Ngay */
+@keyframes fire-burning {
+  0% { 
+    box-shadow: 0 0 8px #ff4d00, 0 0 15px #ff4d00, 0 0 2px #fff inset; 
+    border-color: #ff8c00;
+    transform: scale(1);
+  }
+  25% {
+    box-shadow: 0 0 12px #ff8c00, 0 0 25px #ff0000, 0 0 10px #ffcc00;
+  }
+  50% { 
+    box-shadow: 0 0 20px #ff8c00, 0 0 45px #ff0000, 0 0 20px #ffcc00; 
+    border-color: #ff4d00;
+    transform: scale(1.02);
+  }
+  75% {
+    box-shadow: 0 0 15px #ff4d00, 0 0 30px #ff0000, 0 0 12px #ff8c00;
+  }
+  100% { 
+    box-shadow: 0 0 8px #ff4d00, 0 0 15px #ff4d00, 0 0 2px #fff inset; 
+    border-color: #ff8c00;
+    transform: scale(1);
+  }
+}
+
+.fire-effect {
+  background: linear-gradient(135deg, #ff4d00 0%, #ff0000 100%);
+  animation: fire-burning 1.2s infinite ease-in-out;
+  border: 2px solid #ff4d00;
+  position: relative;
+  z-index: 1;
+}
+
+.fire-effect::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: transparent;
+  border-radius: inherit;
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.6);
+  z-index: -1;
+  animation: fire-burning 1.2s infinite alternate;
+}
+
+.fire-effect:hover {
+  background: linear-gradient(135deg, #ff8c00 0%, #ff4d00 100%);
+  animation-duration: 0.6s; /* Cháy nhanh hơn khi hover */
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;

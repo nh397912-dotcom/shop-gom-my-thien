@@ -15,16 +15,22 @@ const MainApp = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const addToCart = (product: Product) => {
+  const addToCart = (product: Product & { price?: number }) => {
     setCart(prev => {
+      const finalPrice = product.price || (150000 + (product.id * 50000));
       const existingItem = prev.find(item => item.id === product.id);
       if (existingItem) {
         return prev.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
       }
-      return [...prev, { ...product, quantity: 1, price: 150000 + (product.id * 50000) }];
+      return [...prev, { ...product, quantity: 1, price: finalPrice }];
     });
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 300);
+  };
+
+  const handleBuyNow = (product: Product & { price?: number }) => {
+    addToCart(product);
+    setIsCartOpen(true);
   };
 
   const updateQuantity = (id: number, delta: number) => {
@@ -61,7 +67,7 @@ const MainApp = () => {
         </div>
 
         <div className="container mx-auto px-4 py-12">
-          <ProductGallery onAddToCart={addToCart} />
+          <ProductGallery onAddToCart={addToCart} onBuyNow={handleBuyNow} />
         </div>
       </main>
 
