@@ -15,9 +15,11 @@ const MainApp = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const addToCart = (product: Product & { price?: number }) => {
+  const addToCart = (product: Product) => {
     setCart(prev => {
-      const finalPrice = product.price || (150000 + (product.id * 50000));
+      const hasSale = product.salePercent && product.salePercent > 0;
+      const finalPrice = hasSale ? product.price * (1 - product.salePercent! / 100) : product.price;
+      
       const existingItem = prev.find(item => item.id === product.id);
       if (existingItem) {
         return prev.map(item => item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item);
@@ -28,7 +30,7 @@ const MainApp = () => {
     setTimeout(() => setIsAnimating(false), 300);
   };
 
-  const handleBuyNow = (product: Product & { price?: number }) => {
+  const handleBuyNow = (product: Product) => {
     addToCart(product);
     setIsCartOpen(true);
   };

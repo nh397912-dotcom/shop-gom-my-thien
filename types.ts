@@ -4,6 +4,7 @@ export interface Product {
   name: string;
   description: string;
   imageUrl: string;
+  price: number;
   salePercent?: number;
   isBestSeller?: boolean;
   isNew?: boolean;
@@ -11,5 +12,4 @@ export interface Product {
 
 export interface CartItem extends Product {
   quantity: number;
-  price: number;
 }

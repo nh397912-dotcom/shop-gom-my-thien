@@ -18,9 +18,8 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, onAddToCart, 
   const [showShareToast, setShowShareToast] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   
-  const basePrice = 150000 + (product.id * 50000);
   const hasSale = product.salePercent && product.salePercent > 0;
-  const currentPrice = hasSale ? basePrice * (1 - product.salePercent! / 100) : basePrice;
+  const currentPrice = hasSale ? product.price * (1 - product.salePercent! / 100) : product.price;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -128,7 +127,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, onAddToCart, 
               </div>
               {hasSale && (
                 <div className="flex items-center gap-1.5">
-                  <span className="text-gray-400 text-xs line-through">{basePrice.toLocaleString('vi-VN')}đ</span>
+                  <span className="text-gray-400 text-xs line-through">{product.price.toLocaleString('vi-VN')}đ</span>
                   <span className="bg-red-50 text-red-600 text-[10px] font-bold px-1 rounded border border-red-100">-{product.salePercent}%</span>
                 </div>
               )}
@@ -136,13 +135,13 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, index, onAddToCart, 
             
             <div className="flex gap-2">
               <button 
-                onClick={() => onAddToCart({ ...product, price: currentPrice } as any)}
+                onClick={() => onAddToCart(product)}
                 className="flex-[1.2] bg-brand-clay hover:bg-brand-terracotta text-white py-2 rounded-sm text-[10px] font-bold transition-all duration-300 flex items-center justify-center gap-1 shadow-sm uppercase tracking-tighter"
               >
                 Thêm vào giỏ
               </button>
               <button 
-                onClick={() => onBuyNow({ ...product, price: currentPrice } as any)}
+                onClick={() => onBuyNow(product)}
                 className="flex-1 fire-effect text-white py-2 rounded-sm text-[10px] font-bold transition-all duration-300 flex items-center justify-center gap-1 shadow-md uppercase tracking-tighter"
               >
                 Mua ngay
@@ -162,9 +161,9 @@ const ProductGallery: React.FC<{ onAddToCart: (p: Product) => void; onBuyNow: (p
 
   const filteredProducts = products.filter(p => {
     if (filter === 'Tất cả') return true;
-    if (filter === 'Gia dụng') return [1, 5].includes(p.id);
-    if (filter === 'Trang trí') return [2, 7].includes(p.id);
-    if (filter === 'Tâm linh') return [3, 6].includes(p.id);
+    if (filter === 'Gia dụng') return [1, 5, 8, 9].includes(p.id);
+    if (filter === 'Trang trí') return [2, 4, 7, 10, 11].includes(p.id);
+    if (filter === 'Tâm linh') return [3, 6, 12].includes(p.id);
     return true;
   });
 
