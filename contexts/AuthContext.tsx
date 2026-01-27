@@ -7,7 +7,7 @@ const initialProducts: Product[] = [
       id: 1,
       name: 'Chum đựng nước Men Nâu',
       description: 'Vật dụng kinh điển của gốm Mỹ Thiện, men nâu mộc mạc giúp giữ nước mát tự nhiên, bền bỉ cùng thời gian.',
-      imageUrl: 'https://dulichquangngai.vn/uploads/news/2023_12/lang-gom-my-thien.jpg',
+      imageUrl: 'https://i.imgur.com/3xLElDm.jpeg',
       isBestSeller: true
     },
     {
