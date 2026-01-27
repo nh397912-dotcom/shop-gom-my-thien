@@ -7,7 +7,7 @@ export async function generatePotteryImage(
   isEdit: boolean = false
 ): Promise<string> {
   // Always initialize GoogleGenAI with a direct reference to process.env.API_KEY
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
   const baseInstructions = `
     Style: Traditional My Thien Pottery from Quang Ngai, Vietnam. 
