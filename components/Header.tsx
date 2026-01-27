@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
           
           {/* Top Row: Logo & Icons Container */}
           <div className="flex items-center justify-between w-full md:w-auto md:flex-1">
-            <a href="https://gom-my-thien.vercel.app/" className="flex items-center gap-3 group">
+            <a href="/" className="flex items-center gap-3 group">
               <div className="bg-brand-clay text-white w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-inner group-hover:rotate-12 transition-transform">
                 🏺
               </div>
@@ -51,9 +51,8 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
               </div>
             </a>
 
-            {/* Icons Section - Always at the Right on Mobile, Far Right on Desktop */}
+            {/* Icons Section */}
             <div className="flex items-center gap-1 md:order-3">
-              {/* Giỏ hàng */}
               <button 
                 onClick={onCartClick}
                 className={`relative p-2 text-brand-terracotta hover:bg-brand-sand/20 rounded-full transition-all ${isCartAnimating ? 'scale-125' : ''}`}
@@ -69,7 +68,6 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
                 )}
               </button>
 
-              {/* Nút Chia sẻ */}
               <button 
                 onClick={handleShareWebsite}
                 className="p-2 text-brand-terracotta hover:bg-brand-sand/20 rounded-full transition-all active:scale-95"
@@ -80,10 +78,8 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
                 </svg>
               </button>
 
-              {/* Dải ngăn cách (Desktop only) */}
               <div className="hidden md:block w-px h-6 bg-gray-200 mx-1"></div>
 
-              {/* Nút Admin */}
               <button 
                 onClick={isLoggedIn ? logout : () => setIsModalOpen(true)}
                 className={`p-2 rounded-full transition-all hover:bg-brand-sand/20 ${isLoggedIn ? 'text-brand-accent' : 'text-brand-clay'}`}
@@ -96,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
             </div>
           </div>
           
-          {/* Middle Row: Search Bar - Centers in desktop row, below logo in mobile */}
+          {/* Middle Row: Search Bar */}
           <div className="flex-1 w-full max-w-2xl md:order-2">
             <div className="relative group">
               <input 
@@ -112,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-6 text-xs font-bold text-brand-dark uppercase tracking-wider md:order-1">
-            <a href="https://t-l-ch-workshop.vercel.app/" className="hover:text-brand-clay transition-colors whitespace-nowrap">Workshop</a>
+            <a href="https://nan-gom.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-brand-accent hover:text-brand-clay transition-colors whitespace-nowrap border-b-2 border-brand-accent/20">Nặn gốm 3D</a>
             <a href="#san-pham" className="hover:text-brand-clay transition-colors whitespace-nowrap">Sản phẩm</a>
           </nav>
         </div>

@@ -57,16 +57,16 @@ const MainApp = () => {
         <Hero />
         
         {/* Flash Sale / Promotion Banner */}
-        <div className="bg-brand-terracotta text-white py-3 overflow-hidden whitespace-nowrap">
+        <div className="bg-brand-terracotta text-white py-3 overflow-hidden whitespace-nowrap relative">
           <div className="animate-marquee inline-block">
-            🔥 Miễn phí vận chuyển cho đơn hàng gốm trên 1.000.000đ tại Quảng Ngãi! • Tặng bộ ấm trà mini cho hóa đơn từ 2.000.000đ • Workshop giảm 20% khi đặt qua web • 
+            🔥 Miễn phí vận chuyển cho đơn hàng gốm trên 1.000.000đ tại Quảng Ngãi! • Tặng bộ ấm trà mini cho hóa đơn từ 2.000.000đ • Giảm ngay 10% khi mua tại xưởng • 
           </div>
           <div className="animate-marquee2 inline-block absolute">
-            🔥 Miễn phí vận chuyển cho đơn hàng gốm trên 1.000.000đ tại Quảng Ngãi! • Tặng bộ ấm trà mini cho hóa đơn từ 2.000.000đ • Workshop giảm 20% khi đặt qua web • 
+            🔥 Miễn phí vận chuyển cho đơn hàng gốm trên 1.000.000đ tại Quảng Ngãi! • Tặng bộ ấm trà mini cho hóa đơn từ 2.000.000đ • Giảm ngay 10% khi mua tại xưởng • 
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 space-y-24 py-12">
           <ProductGallery onAddToCart={addToCart} onBuyNow={handleBuyNow} />
         </div>
       </main>

@@ -15,10 +15,17 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold mb-4 uppercase text-xs tracking-widest font-sans">Liên kết nhanh</h4>
             <ul className="space-y-2 text-sm opacity-70 font-sans">
-              <li><a href="#gioi-thieu" className="hover:text-brand-clay transition-colors">Câu chuyện làng nghề</a></li>
-              <li><a href="#quy-trinh" className="hover:text-brand-clay transition-colors">Quy trình chế tác</a></li>
               <li><a href="#san-pham" className="hover:text-brand-clay transition-colors">Bộ sưu tập sản phẩm</a></li>
-              <li><a href="https://t-l-ch-workshop.vercel.app/" className="hover:text-brand-clay transition-colors font-bold text-brand-sand">Đặt lịch làm gốm</a></li>
+              <li>
+                <a 
+                  href="https://nan-gom.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-brand-clay transition-colors font-bold text-brand-accent flex items-center gap-2 pt-1 border-t border-white/10 mt-2"
+                >
+                  <span className="text-lg">🏺</span> Xưởng Gốm 3D (Trải nghiệm ảo)
+                </a>
+              </li>
             </ul>
           </div>
           <div>
