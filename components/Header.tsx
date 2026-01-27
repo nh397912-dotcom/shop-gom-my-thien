@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ totalItems = 0, onCartClick, isCartAnim
           
           {/* Top Row: Logo & Icons Container */}
           <div className="flex items-center justify-between w-full md:w-auto md:flex-1">
-            <a href="/" className="flex items-center gap-3 group">
+            <a href="https://gom-my-thien.vercel.app/" className="flex items-center gap-3 group">
               <div className="bg-brand-clay text-white w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-inner group-hover:rotate-12 transition-transform">
                 🏺
               </div>
